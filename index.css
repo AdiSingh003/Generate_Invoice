@@ -1,0 +1,81 @@
+.invoice-form{
+    width: 850px;
+}
+ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+li{
+    cursor: pointer;
+}
+.fixed-width-button {
+    width: 400px; 
+    position: relative; 
+    text-align: left;
+}
+.dropdown-menu{
+    max-height: 200px;
+    overflow-y: auto;
+    width: 400px;
+}
+
+.searchInput {
+    width: 100%; 
+}
+.product-button{
+    width:150px;
+    position: relative;
+    text-align: left;
+}
+#addProduct{
+    background-color: blue;
+    color: white;
+
+    &:hover{
+    background-color: rgb(69, 69, 255);
+    }
+}
+.quantity,.price,.total_price,.final_total_price{
+    width:100px;
+}
+.close{
+    background-color: red;
+    color: white;
+    outline: none;
+    border-radius: 20%;
+    border: none;
+    align-items: center;
+
+    &:hover{
+        background-color: lightcoral;
+    }
+}
+.dropdown-toggle::after {
+    position: absolute;
+    right: 10px; 
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s; 
+}
+
+.dropdown-toggle[aria-expanded="true"]::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+h5{
+    color: green;
+}
+.errMessage{
+    color:red;
+}
+
+@media (max-width: 768px) {
+    .fixed-width-button,.dropdown-menu {
+        width: 200px; 
+    } 
+}
+@media (max-width: 992px) {
+    .fixed-width-button,.dropdown-menu {
+        width: 200px; 
+    } 
+}
