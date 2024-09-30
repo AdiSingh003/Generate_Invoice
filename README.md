@@ -6,4 +6,8 @@
 ```
 composer require tecnickcom/tcpdf
 ```
+4. Install PHP Dotenv
+```
+$ composer require vlucas/phpdotenv
+``` 
 5. Change the database credentials with your local database credentials
