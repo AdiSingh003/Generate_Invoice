@@ -1,5 +1,5 @@
 <?php
-require('database.php');
+require __DIR__ .'/../api/database.php';
 
 if (isset($_GET['vendor_name'])) {
     $vendor_name = $_GET['vendor_name'];

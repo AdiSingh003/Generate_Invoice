@@ -1,6 +1,6 @@
 <?php
-require('database.php'); 
-require_once('vendor/tecnickcom/tcpdf/tcpdf.php'); 
+require __DIR__ .'/../api/database.php';
+require_once __DIR__ .'/../vendor/tecnickcom/tcpdf/tcpdf.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $invoiceData = json_decode($_POST['invoiceData'], true);
@@ -234,7 +234,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <br><br>';
 
     $pdf->writeHTML($html, true, false, true, false, '');
-    ob_clean(); 
-    $pdf->Output('invoice.pdf', 'D');
+    ob_clean();
+    $pdf->Output(__DIR__ .'/../invoices/invoice.pdf_'.$latestPurchaseOrderNo, 'D');
 }
 ?>

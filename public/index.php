@@ -1,5 +1,5 @@
 <?php
-require('database.php');
+require __DIR__ .'/../api/database.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -221,7 +221,7 @@ require('database.php');
             var selectedVendor = $(this).text();
             $('#selectVendor').text(selectedVendor); 
             $.ajax({
-                url: 'getVendorDetails.php',
+                url: '/Generate_Invoice/api/getVendordetails.php',
                 method: 'GET',
                 data: { vendor_name: selectedVendor },
                 dataType: 'json',
@@ -323,6 +323,7 @@ require('database.php');
         });
 
         $('.phoneNumber').on('input', function() {
+            this.value = this.value.replace(/\D/g, ''); 
             if (this.value.length > 10) {
                 this.value = this.value.slice(0, 10); 
             }
@@ -471,9 +472,8 @@ require('database.php');
                 };
                 invoiceData.products.push(product);
             });
-
             const $form = $('<form>', {
-                action: 'saveInvoiceFormDetails.php',
+                action: '/Generate_Invoice/api/saveInvoiceFormDetails.php',
                 method: 'POST'
             }).append($('<input>', {
                 type: 'hidden',
